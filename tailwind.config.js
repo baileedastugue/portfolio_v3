@@ -3,7 +3,7 @@ export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		screens: {
-			// sm: '425px',
+			sm: '425px',
 			md: '768px',
 			lg: '1024px',
 			xl: '1440px',
@@ -25,7 +25,16 @@ export default {
 				focus: 'Playfair Display, serif',
 			},
 			letterSpacing: {
-				display: '24px',
+				display: '1.5em',
+			},
+			animation: {
+				reveal: 'reveal 1.5s ease-out',
+			},
+			keyframes: {
+				reveal: {
+					'0%': { width: 0 },
+					'100%': { width: '100%' },
+				},
 			},
 		},
 	},
