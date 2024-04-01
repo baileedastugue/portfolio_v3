@@ -2,12 +2,12 @@ import './App.css';
 
 function App() {
 	return (
-		<>
-			<h1 className='text-3xl font-bold underline'>Hello world!</h1>
-			<button className='bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3'>
-				push the button
+		<div className='font-thin'>
+			<h1 className='font-display text-purple'>Hello world!</h1>
+			<button className='text-white hover:bg-sky-800 bg-orange px-4 py-2 sm:px-8 sm:py-3'>
+				push the button!{' '}
 			</button>
-		</>
+		</div>
 	);
 }
 

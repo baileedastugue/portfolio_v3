@@ -9,6 +9,7 @@
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --cache --fix",
 		"preview": "vite preview",
 		"style": "npx stylelint '**/*.css' --fix",
+		"build:style": "npx tailwindcss -i ./src/index.css -o ./src/index.css --watch",
 		"prepare": "husky && husky install",
 		"test": "vitest",
 		"test:coverage": "vitest run --coverage",
