@@ -32,8 +32,9 @@ export default {
 			},
 			keyframes: {
 				reveal: {
-					'0%': { width: 0 },
-					'100%': { width: '100%' },
+					'0%': { width: 0, marginLeft: 0 },
+					'90%': { width: '100%', marginLeft: '-.5rem' },
+					'100%': { marginLeft: 0 },
 				},
 			},
 		},
