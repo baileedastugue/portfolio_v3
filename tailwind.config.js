@@ -24,6 +24,9 @@ export default {
 			fontFamily: {
 				focus: 'Playfair Display, serif',
 			},
+			letterSpacing: {
+				display: '24px',
+			},
 		},
 	},
 	plugins: [],
