@@ -1,10 +1,10 @@
-export interface DisplayTextProps {
+interface DisplayTextProps {
 	bottomLeftText: string;
 	topRightText: string;
 	textClass?: string; // change to one of type
 }
 
-export const DisplayText = ({
+const DisplayText = ({
 	bottomLeftText = '',
 	topRightText = '',
 	textClass = 'text-dark',
@@ -39,3 +39,5 @@ const InnerText = ({ text, textPosition }: InnerTextProps) => {
 		</div>
 	);
 };
+
+export default DisplayText;
