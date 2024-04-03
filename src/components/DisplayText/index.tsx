@@ -1,7 +1,7 @@
 interface DisplayTextProps {
 	bottomLeftText: string;
 	topRightText: string;
-	textClass?: string; // change to one of type
+	textClass?: 'text-dark' | 'text-light';
 }
 
 const DisplayText = ({
@@ -11,7 +11,7 @@ const DisplayText = ({
 }: DisplayTextProps) => {
 	return (
 		<div
-			className={`relative flex h-screen w-screen ${textClass} hidden overflow-hidden md:block`}
+			className={`absolute left-0 top-0 flex h-screen w-screen ${textClass} hidden overflow-hidden md:block`}
 		>
 			<InnerText text={bottomLeftText} textPosition='bottomLeft' />
 			<InnerText text={topRightText} textPosition='topRight' />
@@ -31,7 +31,7 @@ const InnerText = ({ text, textPosition }: InnerTextProps) => {
 		bottomLeft:
 			'bottom-0 left-4 origin-bottom-left -translate-y-4 translate-x-32 -rotate-90',
 		topRight:
-			'top-0 -right-4 origin-top-left rotate-90 translate-x-full translate-y-4',
+			'top-0 -right-4 origin-top-left translate-x-full translate-y-4 rotate-90',
 	};
 	return (
 		<div className={`${classes.container} ${classes[textPosition]}`}>
