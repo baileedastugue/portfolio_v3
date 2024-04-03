@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+	darkMode: 'selector',
 	theme: {
 		screens: {
 			sm: '425px',
@@ -11,6 +12,7 @@ export default {
 		colors: {
 			purple: '#3E40AB',
 			'purple-light': '#A381C3',
+			'purple-dark': '#3E40AB',
 			orange: '#EC8605',
 			yellow: '#FAC414',
 			dark: '#242424',

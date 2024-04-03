@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 import './index.css';
-import Layout from './components/Layout/index.tsx';
 import Root from './routes/Root/index.tsx';
 import About from './routes/About/index.tsx';
 import MyResume from './routes/MyResume/index.tsx';
@@ -39,8 +38,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<Layout pageTheme='light'>
-			<RouterProvider router={router} />
-		</Layout>
+		<RouterProvider router={router} />
 	</React.StrictMode>
 );
