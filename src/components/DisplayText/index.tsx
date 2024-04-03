@@ -35,7 +35,7 @@ const InnerText = ({ text, textPosition }: InnerTextProps) => {
 	};
 	return (
 		<div className={`${classes.container} ${classes[textPosition]}`}>
-			<p className='animate-reveal mx-auto overflow-hidden'>{text}</p>
+			<p className='mx-auto animate-reveal overflow-hidden'>{text}</p>
 		</div>
 	);
 };
