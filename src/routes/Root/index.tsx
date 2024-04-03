@@ -1,5 +1,6 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Layout from '../../components/Layout';
+import Nav from '../../components/Nav';
 
 const Root = () => {
 	const { pathname } = useLocation();
@@ -7,22 +8,7 @@ const Root = () => {
 	return (
 		<div className={theme}>
 			<Layout>
-				<nav>
-					<ul>
-						<li>
-							<Link to='/'>Landing</Link>
-						</li>
-						<li>
-							<Link to='/about'>About</Link>
-						</li>
-						<li>
-							<Link to='/resume'>My resume</Link>
-						</li>
-						<li>
-							<Link to='/work'>My work</Link>
-						</li>
-					</ul>
-				</nav>
+				<Nav />
 				<Outlet />
 			</Layout>
 		</div>

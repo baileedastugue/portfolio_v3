@@ -9,6 +9,9 @@ export default {
 			lg: '1024px',
 			xl: '1440px',
 		},
+		boxShadow: {
+			xs: '0 4px 6px 0 rgba(0, 0, 0, 0.25)',
+		},
 		colors: {
 			purple: '#3E40AB',
 			'purple-light': '#A381C3',
