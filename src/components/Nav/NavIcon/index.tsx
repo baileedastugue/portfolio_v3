@@ -1,31 +1,88 @@
+import { useRef, ReactNode } from 'react';
+
+interface PathProps {
+	d: string;
+	children: ReactNode;
+}
+
+const Path = (props: PathProps) => (
+	<path
+		fill='transparent'
+		strokeWidth='4'
+		className='stroke-purple group-hover:stroke-orange dark:stroke-yellow'
+		strokeLinecap='round'
+		{...props}
+	/>
+);
+
 interface NavIconProps {
-	handleOnClick: () => void;
+	onClick: () => void;
 	isOpen: boolean;
 }
 
-const NavIcon = ({ isOpen = false, handleOnClick }: NavIconProps) => {
-	const generalClasses = isOpen
-		? 'h-1 rounded-full'
-		: 'shadow-xs rounded-full shadow-dark h-1';
-	const topBarClasses = isOpen
-		? 'transform rotate-45 origin-top-left w-10 -translate-y-2/4 translate-x-px'
-		: 'w-12';
-	const bottomBarClasses = isOpen
-		? 'transform -rotate-45 w-10 origin-top-left translate-y-2/4 -translate-x-px'
-		: 'w-8';
-	const color = isOpen
-		? 'bg-purple dark:bg-yellow'
-		: 'bg-purple dark:bg-yellow';
+const NavIcon = ({ isOpen, onClick }: NavIconProps) => {
+	const topFromClosedToOpen = useRef<SVGAnimationElement>(null);
+	const bottomFromClosedToOpen = useRef<SVGAnimationElement>(null);
+
+	const topFromOpenToClosed = useRef<SVGAnimationElement>(null);
+	const bottomFromOpenToClosed = useRef<SVGAnimationElement>(null);
+
+	const handleOnClick = () => {
+		if (isOpen) {
+			topFromOpenToClosed.current?.beginElement();
+			bottomFromOpenToClosed.current?.beginElement();
+		} else {
+			topFromClosedToOpen.current?.beginElement();
+			bottomFromClosedToOpen.current?.beginElement();
+		}
+		onClick();
+	};
+
 	return (
-		<>
-			<button
-				className={`border-rose-600 my-3 flex min-h-[28.28px] min-w-[28.28px] flex-col ${isOpen ? 'justify-between' : 'gap-3'}`}
-				onClick={handleOnClick}
-			>
-				<div className={`${generalClasses} ${topBarClasses} ${color} `} />
-				<div className={`${generalClasses} ${bottomBarClasses} ${color}`} />
-			</button>
-		</>
+		<button onClick={handleOnClick} className='group'>
+			<svg width='54' height='40' viewBox='0 0 54 40'>
+				<Path d='M6 2 L 54 2'>
+					<animate
+						attributeName='d'
+						from='M6 2 L 54 2'
+						to='M6 2 L 34 30'
+						dur='500ms'
+						begin='indefinite'
+						fill='freeze'
+						ref={topFromClosedToOpen}
+					/>
+					<animate
+						attributeName='d'
+						from='M6 2 L 34 30'
+						to='M6 2 L 54 2'
+						dur='500ms'
+						begin='indefinite'
+						fill='freeze'
+						ref={topFromOpenToClosed}
+					/>
+				</Path>
+				<Path d='M 6 14 L 34 14'>
+					<animate
+						attributeName='d'
+						from='M 6 14 L 34 14'
+						to='M 6 30 L 34 2'
+						dur='500ms'
+						begin='indefinite'
+						fill='freeze'
+						ref={bottomFromClosedToOpen}
+					/>
+					<animate
+						attributeName='d'
+						from='M 6 30 L 34 2'
+						to='M 6 14 L 34 14'
+						dur='500ms'
+						begin='indefinite'
+						fill='freeze'
+						ref={bottomFromOpenToClosed}
+					/>
+				</Path>
+			</svg>
+		</button>
 	);
 };
 
