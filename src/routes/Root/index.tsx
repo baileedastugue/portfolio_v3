@@ -7,8 +7,8 @@ const Root = () => {
 	const theme = pathname === '/' || pathname === '/landing' ? 'dark' : 'light';
 	return (
 		<div className={theme}>
+			<Nav />
 			<Layout>
-				<Nav />
 				<Outlet />
 			</Layout>
 		</div>

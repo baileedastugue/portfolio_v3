@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import NavIcon from './NavIcon';
+import NavMenu from './NavMenu';
 
 const Nav = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<>
-			<NavIcon isOpen={isOpen} handleOnClick={() => setIsOpen(!isOpen)} />
-		</>
+		<NavMenu isOpen={isOpen}>
+			<NavIcon isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+		</NavMenu>
 	);
 };
 
