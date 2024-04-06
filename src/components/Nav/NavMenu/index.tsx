@@ -33,7 +33,7 @@ const NavMenu = ({ children, isOpen }: NavMenuProps) => {
 
 	return (
 		<div
-			className={`absolute left-6 top-6 z-30 ${isOpen && 'flex w-fit flex-col gap-4 rounded-card bg-light p-3 shadow-xs shadow-dark'}`}
+			className={`absolute left-6 top-6 z-30  p-3 ${isOpen && 'flex w-fit flex-col gap-4 rounded-card bg-light shadow-xs shadow-dark'}`}
 		>
 			{children}
 			{isOpen && (

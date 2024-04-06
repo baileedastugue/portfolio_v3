@@ -6,13 +6,7 @@ interface PathProps {
 }
 
 const Path = (props: PathProps) => (
-	<path
-		fill='transparent'
-		strokeWidth='4'
-		className='stroke-purple group-hover:stroke-orange dark:stroke-yellow'
-		strokeLinecap='round'
-		{...props}
-	/>
+	<path fill='transparent' strokeWidth='4' strokeLinecap='round' {...props} />
 );
 
 interface NavIconProps {
@@ -23,9 +17,10 @@ interface NavIconProps {
 const NavIcon = ({ isOpen, onClick }: NavIconProps) => {
 	const topFromClosedToOpen = useRef<SVGAnimationElement>(null);
 	const bottomFromClosedToOpen = useRef<SVGAnimationElement>(null);
-
 	const topFromOpenToClosed = useRef<SVGAnimationElement>(null);
 	const bottomFromOpenToClosed = useRef<SVGAnimationElement>(null);
+
+	const duration = '300ms';
 
 	const handleOnClick = () => {
 		if (isOpen) {
@@ -40,13 +35,18 @@ const NavIcon = ({ isOpen, onClick }: NavIconProps) => {
 
 	return (
 		<button onClick={handleOnClick} className='group'>
-			<svg width='54' height='40' viewBox='0 0 54 40'>
+			<svg
+				width='60'
+				height='40'
+				viewBox='0 0 60 40'
+				className={`stroke-purple group-hover:stroke-orange ${!isOpen && 'dark:stroke-yellow'}`}
+			>
 				<Path d='M6 2 L 54 2'>
 					<animate
 						attributeName='d'
 						from='M6 2 L 54 2'
 						to='M6 2 L 34 30'
-						dur='500ms'
+						dur={duration}
 						begin='indefinite'
 						fill='freeze'
 						ref={topFromClosedToOpen}
@@ -55,7 +55,7 @@ const NavIcon = ({ isOpen, onClick }: NavIconProps) => {
 						attributeName='d'
 						from='M6 2 L 34 30'
 						to='M6 2 L 54 2'
-						dur='500ms'
+						dur={duration}
 						begin='indefinite'
 						fill='freeze'
 						ref={topFromOpenToClosed}
@@ -66,7 +66,7 @@ const NavIcon = ({ isOpen, onClick }: NavIconProps) => {
 						attributeName='d'
 						from='M 6 14 L 34 14'
 						to='M 6 30 L 34 2'
-						dur='500ms'
+						dur={duration}
 						begin='indefinite'
 						fill='freeze'
 						ref={bottomFromClosedToOpen}
@@ -75,7 +75,7 @@ const NavIcon = ({ isOpen, onClick }: NavIconProps) => {
 						attributeName='d'
 						from='M 6 30 L 34 2'
 						to='M 6 14 L 34 14'
-						dur='500ms'
+						dur={duration}
 						begin='indefinite'
 						fill='freeze'
 						ref={bottomFromOpenToClosed}
