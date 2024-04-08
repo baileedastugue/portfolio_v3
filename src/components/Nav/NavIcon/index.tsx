@@ -20,7 +20,7 @@ const NavIcon = ({ isOpen, onClick }: NavIconProps) => {
 	const topFromOpenToClosed = useRef<SVGAnimationElement>(null);
 	const bottomFromOpenToClosed = useRef<SVGAnimationElement>(null);
 
-	const duration = '300ms';
+	const duration = '350ms';
 
 	const handleOnClick = () => {
 		if (isOpen) {
@@ -34,11 +34,11 @@ const NavIcon = ({ isOpen, onClick }: NavIconProps) => {
 	};
 
 	return (
-		<button onClick={handleOnClick} className='group'>
+		<button onClick={handleOnClick} className='group w-min'>
 			<svg
-				width='60'
-				height='40'
-				viewBox='0 0 60 40'
+				width='54'
+				height='32'
+				viewBox='0 0 54 32'
 				className={`stroke-purple group-hover:stroke-orange ${!isOpen && 'dark:stroke-yellow'}`}
 			>
 				<Path d='M6 2 L 54 2'>
