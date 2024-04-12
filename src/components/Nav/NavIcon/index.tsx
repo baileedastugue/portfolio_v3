@@ -1,4 +1,4 @@
-import { useRef, ReactNode } from 'react';
+import { useRef, ReactNode, useEffect } from 'react';
 
 interface PathProps {
 	d: string;
@@ -12,9 +12,10 @@ const Path = (props: PathProps) => (
 interface NavIconProps {
 	onClick: () => void;
 	isOpen: boolean;
+	hasBeenOpened: boolean;
 }
 
-const NavIcon = ({ isOpen, onClick }: NavIconProps) => {
+const NavIcon = ({ isOpen, onClick, hasBeenOpened }: NavIconProps) => {
 	const topFromClosedToOpen = useRef<SVGAnimationElement>(null);
 	const bottomFromClosedToOpen = useRef<SVGAnimationElement>(null);
 	const topFromOpenToClosed = useRef<SVGAnimationElement>(null);
@@ -22,24 +23,31 @@ const NavIcon = ({ isOpen, onClick }: NavIconProps) => {
 
 	const duration = '350ms';
 
-	const handleOnClick = () => {
-		if (isOpen) {
-			topFromOpenToClosed.current?.beginElement();
-			bottomFromOpenToClosed.current?.beginElement();
-		} else {
-			topFromClosedToOpen.current?.beginElement();
-			bottomFromClosedToOpen.current?.beginElement();
-		}
-		onClick();
+	const moveToClosed = () => {
+		topFromOpenToClosed.current?.beginElement();
+		bottomFromOpenToClosed.current?.beginElement();
 	};
 
+	const moveToOpen = () => {
+		topFromClosedToOpen.current?.beginElement();
+		bottomFromClosedToOpen.current?.beginElement();
+	};
+
+	useEffect(() => {
+		if (isOpen) {
+			moveToOpen();
+		} else if (hasBeenOpened) {
+			moveToClosed();
+		}
+	}, [isOpen, hasBeenOpened]);
+
 	return (
-		<button onClick={handleOnClick} className='group w-min'>
+		<button onClick={() => onClick()} className='group w-min'>
 			<svg
-				width='54'
+				width='56'
 				height='32'
-				viewBox='0 0 54 32'
-				className={`stroke-purple group-hover:stroke-orange ${!isOpen && 'dark:stroke-yellow'}`}
+				viewBox='0 0 56 32'
+				className={`stroke-purple group-hover:stroke-orange dark:stroke-yellow ${isOpen && 'stroke-yellow dark:stroke-purple-light'}`}
 			>
 				<Path d='M6 2 L 54 2'>
 					<animate

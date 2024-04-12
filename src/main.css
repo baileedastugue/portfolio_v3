@@ -5,10 +5,9 @@
 @layer utilities {
 	.circle-clip {
 		clip-path: circle(15rem at 30% 35%);
-		color: red;
 	}
 
 	.circle-clip-hidden {
-		clip-path: circle(0 at 9% 5%);
+		clip-path: circle(0 at 9% 7%);
 	}
 }
