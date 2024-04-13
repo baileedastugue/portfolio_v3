@@ -1,18 +1,18 @@
 import ClickHandlerLink from '../../ClickHandlerLink';
 
 interface NavMenuProps {
-	to: string;
 	children: string;
-	isActive: boolean;
 	closeMenu: () => void;
+	isActive: boolean;
+	to: string;
 }
 
-const NavMenu = (props: NavMenuProps) => {
+const NavMenu = ({ closeMenu, isActive, ...props }: NavMenuProps) => {
 	return (
 		<ClickHandlerLink
 			{...props}
-			onClick={props.closeMenu}
-			className={`text-4xl leading-normal transition ${props.isActive ? 'text-light dark:text-purple' : 'text-dark hover:underline'}`}
+			onClick={closeMenu}
+			className={`text-4xl leading-normal transition ${isActive ? 'text-light dark:text-purple' : 'text-dark hover:underline'}`}
 		/>
 	);
 };
