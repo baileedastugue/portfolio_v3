@@ -13,7 +13,7 @@ const Nav = () => {
 
 	return (
 		<>
-			<div className='absolute left-8 top-6 z-40'>
+			<div className='absolute left-4 top-4 z-40 md:left-8 md:top-6'>
 				<NavIcon
 					isOpen={isOpen}
 					onClick={toggleNav}

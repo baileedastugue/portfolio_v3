@@ -9,7 +9,7 @@ const DisplayText = ({
 	topRightText = '',
 }: DisplayTextProps) => {
 	return (
-		<div className='absolute left-0 top-0 flex h-screen w-screen overflow-hidden text-dark sm:hidden md:block dark:text-light'>
+		<div className='absolute left-0 top-0 hidden h-screen w-screen overflow-hidden text-dark md:block dark:text-light'>
 			<InnerText text={bottomLeftText} textPosition='bottomLeft' />
 			<InnerText text={topRightText} textPosition='topRight' />
 		</div>

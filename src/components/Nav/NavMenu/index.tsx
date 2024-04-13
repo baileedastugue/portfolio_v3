@@ -36,7 +36,7 @@ const NavMenu = ({ children, isOpen, closeMenu }: NavMenuProps) => {
 
 	return (
 		<div
-			className={`${isOpen ? 'circle-clip' : 'circle-clip-hidden'} absolute left-0 top-0 z-30 h-[35rem] w-[36rem] bg-purple-light p-16 pl-10 transition-all duration-300 dark:bg-light`}
+			className={`${isOpen ? 'circle-clip' : 'circle-clip-hidden'} absolute left-0 top-0 z-30 h-[35rem] w-full bg-purple-light pl-10 pt-12 transition-all duration-300 md:w-[36rem] md:pl-14 md:pt-14 dark:bg-light`}
 		>
 			{children}
 			<nav>

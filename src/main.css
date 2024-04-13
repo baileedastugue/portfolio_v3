@@ -4,7 +4,7 @@
 
 @layer utilities {
 	.circle-clip {
-		clip-path: circle(15rem at 30% 35%);
+		clip-path: circle(15rem at 22% 33%);
 	}
 
 	.circle-clip-hidden {
