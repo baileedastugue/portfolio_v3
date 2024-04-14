@@ -1,10 +1,10 @@
-import PageTitle from '../../components/PageTitle';
 import BigFace from './BigFace';
+import Description from './Description';
 
 const Landing = () => {
 	return (
 		<>
-			<PageTitle title='Yeehaw' />
+			<Description />
 			<BigFace />
 		</>
 	);
