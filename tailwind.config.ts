@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from 'tailwindcss';
+
 export default {
 	content: ['index.html', 'src/**/*.tsx'],
 	darkMode: 'selector',
@@ -37,12 +38,12 @@ export default {
 			},
 			keyframes: {
 				reveal: {
-					'0%': { width: 0, marginLeft: 0 },
+					'0%': { width: '0', marginLeft: '0' },
 					'90%': { width: '100%', marginLeft: '-.5rem' },
-					'100%': { marginLeft: 0 },
+					'100%': { marginLeft: '0' },
 				},
 				circleExpand: {
-					'0%': { height: 0, width: 0 },
+					'0%': { height: '0', width: '0' },
 					'100%': {
 						height: '600px',
 						width: '600px',
@@ -56,4 +57,4 @@ export default {
 		},
 	},
 	plugins: [],
-};
+} satisfies Config;

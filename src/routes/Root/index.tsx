@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Layout from '../../components/Layout';
 import Nav from '../../components/Nav';
+import Logo from '../../components/Logo';
 
 const Root = () => {
 	const { pathname } = useLocation();
@@ -8,6 +9,7 @@ const Root = () => {
 	return (
 		<div className={theme}>
 			<Nav />
+			<Logo darkLightTheme={theme} />
 			<Layout>
 				<Outlet />
 			</Layout>
