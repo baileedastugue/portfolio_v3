@@ -8,7 +8,7 @@ interface LogoProps {
 const Logo = ({ darkLightTheme }: LogoProps) => {
 	const bdFill = darkLightTheme === 'dark' ? 'light' : 'dark';
 	return (
-		<div className='absolute right-4 top-4 z-10'>
+		<div className='absolute right-4 top-4 z-10 md:hidden'>
 			<BD fill={theme.theme.colors[bdFill]} />
 		</div>
 	);
