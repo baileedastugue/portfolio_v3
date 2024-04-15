@@ -1,4 +1,5 @@
 import theme from '../../../tailwind.config';
+import ClickHandlerLink from '../ClickHandlerLink';
 import BD from './BD';
 
 interface LogoProps {
@@ -8,9 +9,9 @@ interface LogoProps {
 const Logo = ({ darkLightTheme }: LogoProps) => {
 	const bdFill = darkLightTheme === 'dark' ? 'light' : 'dark';
 	return (
-		<div className='absolute right-4 top-4 z-10 md:hidden'>
+		<ClickHandlerLink to='/' className='absolute right-4 top-4 z-10 md:hidden'>
 			<BD fill={theme.theme.colors[bdFill]} />
-		</div>
+		</ClickHandlerLink>
 	);
 };
 
