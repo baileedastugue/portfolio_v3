@@ -18,7 +18,7 @@ export default {
 			serif: ['Source Serif Pro', 'serif'],
 		},
 		screens: {
-			sm: '425px',
+			sm: '390px',
 			md: '768px',
 			lg: '1024px',
 			xl: '1440px',

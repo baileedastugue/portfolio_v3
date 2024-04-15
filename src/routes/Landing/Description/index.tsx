@@ -2,16 +2,17 @@ import Squiggle from './Squiggle';
 
 const Description = () => {
 	return (
-		<p className='relative z-20 ml-4 pt-12 font-serif text-4xl leading-snug text-light'>
+		<p className='relative z-20 pt-12 font-serif text-3xl leading-snug text-light sm:text-4xl sm:leading-normal'>
 			Hi! I&apos;m Bailee - <br />
 			a front-end loving, <br />
 			product-minded, <br />
 			user-obsessed
 			<br />{' '}
 			<span className='relative '>
-				software engineer.
+				software engineer
 				<Squiggle />
-			</span>
+			</span>{' '}
+			<span className='sm:block'>based in Austin, Texas.</span>
 		</p>
 	);
 };

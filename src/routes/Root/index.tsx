@@ -7,7 +7,7 @@ const Root = () => {
 	const { pathname } = useLocation();
 	const theme = pathname === '/' || pathname === '/landing' ? 'dark' : 'light';
 	return (
-		<div className={theme}>
+		<div className={`${theme} h-dvh w-screen`}>
 			<Nav />
 			<Logo darkLightTheme={theme} />
 			<Layout>

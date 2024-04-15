@@ -1,13 +1,13 @@
 import ClickHandlerLink from '../../ClickHandlerLink';
 
-interface NavMenuProps {
+interface NavLinkProps {
 	children: string;
 	closeMenu: () => void;
 	isActive: boolean;
 	to: string;
 }
 
-const NavMenu = ({ closeMenu, isActive, ...props }: NavMenuProps) => {
+const NavLink = ({ closeMenu, isActive, ...props }: NavLinkProps) => {
 	return (
 		<ClickHandlerLink
 			{...props}
@@ -17,4 +17,4 @@ const NavMenu = ({ closeMenu, isActive, ...props }: NavMenuProps) => {
 	);
 };
 
-export default NavMenu;
+export default NavLink;

@@ -1,6 +1,6 @@
 const Squiggle = () => {
 	return (
-		<span className='absolute -bottom-1.5 -left-4 -z-10'>
+		<span className='absolute -bottom-2 -left-4 -z-10 hidden sm:block'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='311'

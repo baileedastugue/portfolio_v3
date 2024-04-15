@@ -1,5 +1,5 @@
 import theme from '../../../tailwind.config';
-import BD from '../../assets/BD';
+import BD from './BD';
 
 interface LogoProps {
 	darkLightTheme: 'dark' | 'light';
