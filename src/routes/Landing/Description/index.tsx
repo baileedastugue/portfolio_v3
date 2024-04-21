@@ -3,7 +3,7 @@ import Squiggle from './Squiggle';
 
 const Description = () => {
 	return (
-		<p className='relative z-20 pt-12 font-serif text-3xl leading-snug text-light sm:text-4xl sm:leading-normal'>
+		<p className='relative z-20 pt-12 font-serif text-3xl leading-snug text-light sm:text-4xl sm:leading-normal md:text-5xl md:leading-normal'>
 			Hi! I&apos;m Bailee - <br />a <GradientText>front-end</GradientText>{' '}
 			loving, <br />
 			product-minded, <br />
