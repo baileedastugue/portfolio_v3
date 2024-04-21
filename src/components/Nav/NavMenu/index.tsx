@@ -18,10 +18,6 @@ export const navItems = [
 		title: 'About me',
 	},
 	{
-		to: '/resume',
-		title: 'My resume',
-	},
-	{
 		to: '/work',
 		title: 'My work',
 	},
@@ -35,7 +31,7 @@ export const navItems = [
 const NavMenu = ({ children, isOpen, closeMenu }: NavMenuProps) => {
 	return (
 		<div
-			className={`${isOpen ? 'circle-clip' : 'circle-clip-hidden'} absolute left-0 top-0 z-30 w-full bg-purple-light pl-10 pt-12 transition-all duration-300 md:w-[36rem] md:pl-14 md:pt-14 dark:bg-light`}
+			className={`${isOpen ? 'nav-circle-clip' : 'nav-circle-clip-hidden'} absolute left-0 top-0 z-30 w-full bg-purple-light pl-10 pt-12 transition-all duration-300 md:w-[36rem] md:pl-14 md:pt-14 dark:bg-light`}
 		>
 			{children}
 			<nav>

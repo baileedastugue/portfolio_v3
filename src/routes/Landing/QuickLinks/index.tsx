@@ -4,7 +4,7 @@ import { useMatch, useResolvedPath } from 'react-router-dom';
 
 const QuickLinks = () => {
 	return (
-		<ul className='sm:mb-32 md:mb-16 '>
+		<ul className='mb-4  md:mb-16'>
 			{navItems.map(item => {
 				const resolved = useResolvedPath(item.to);
 				const match = useMatch({ path: resolved.pathname, end: true });
@@ -14,7 +14,7 @@ const QuickLinks = () => {
 							<ClickHandlerLink
 								key={item.title}
 								to={item.to}
-								className='relative z-10 text-2xl leading-snug text-light sm:text-3xl sm:leading-normal'
+								className='relative z-10 bg-white/80 px-1 text-2xl leading-snug text-purple backdrop-blur-sm hover:bg-purple-light sm:text-3xl sm:leading-normal'
 							>
 								{item.title}
 							</ClickHandlerLink>

@@ -45,14 +45,6 @@ export default {
 					'90%': { width: '100%', marginLeft: '-.5rem' },
 					'100%': { marginLeft: '0' },
 				},
-				circleExpand: {
-					'0%': { height: '0', width: '0' },
-					'100%': {
-						height: '600px',
-						width: '600px',
-						margin: '-100px',
-					},
-				},
 			},
 			letterSpacing: {
 				display: '1.5em',

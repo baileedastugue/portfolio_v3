@@ -3,11 +3,15 @@
 @tailwind utilities;
 
 @layer utilities {
-	.circle-clip {
+	.nav-circle-clip {
 		clip-path: circle(15rem at 22% 33%);
 	}
 
-	.circle-clip-hidden {
+	.nav-circle-clip-hidden {
 		clip-path: circle(0 at 9% 7%);
+	}
+
+	.full-width-plus-5 {
+		min-width: calc(100% + 5rem);
 	}
 }
