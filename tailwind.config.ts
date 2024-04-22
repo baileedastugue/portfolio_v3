@@ -49,6 +49,9 @@ export default {
 			letterSpacing: {
 				display: '1.5em',
 			},
+			minWidth: {
+				'full-plus-5rem': 'calc(100% + 5rem)',
+			},
 		},
 	},
 	plugins: [],

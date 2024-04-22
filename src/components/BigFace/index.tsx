@@ -18,7 +18,7 @@ const BigFace = () => {
 
 	return (
 		<img
-			className='sm:full-width-plus-5 absolute -bottom-28 -right-20 min-w-full sm:-bottom-20 md:-right-2'
+			className='md:bg-clip-circle md:circle-clip absolute -bottom-28 -right-20 min-w-full-plus-5rem sm:-bottom-20 md:-bottom-32 md:-right-10 md:w-2/3 md:min-w-0'
 			alt='Bailee Dastugue; woman with brown hair smiling behind a computer.'
 			src={Faces[currFaceIndex]}
 		/>

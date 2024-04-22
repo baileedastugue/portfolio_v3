@@ -11,7 +11,7 @@
 		clip-path: circle(0 at 9% 7%);
 	}
 
-	.full-width-plus-5 {
-		min-width: calc(100% + 5rem);
+	.circle-clip {
+		clip-path: circle();
 	}
 }
