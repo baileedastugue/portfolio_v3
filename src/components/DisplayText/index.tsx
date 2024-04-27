@@ -9,7 +9,7 @@ const DisplayText = ({
 	topRightText = '',
 }: DisplayTextProps) => {
 	return (
-		<div className='absolute left-0 top-0 z-10 hidden h-screen w-screen overflow-hidden text-dark md:block dark:text-light'>
+		<div className='absolute left-0 top-0 hidden h-screen w-screen overflow-hidden text-dark md:block dark:text-light'>
 			<InnerText text={bottomLeftText} textPosition='bottomLeft' />
 			<InnerText text={topRightText} textPosition='topRight' />
 		</div>
@@ -31,7 +31,7 @@ const InnerText = ({ text, textPosition }: InnerTextProps) => {
 			'top-0 -right-4 origin-top-left translate-x-full translate-y-4 rotate-90',
 	};
 	return (
-		<div className={`${classes.container} ${classes[textPosition]}`}>
+		<div className={`${classes.container} ${classes[textPosition]} z-10 `}>
 			<p className='mx-auto animate-reveal overflow-hidden'>{text}</p>
 		</div>
 	);
