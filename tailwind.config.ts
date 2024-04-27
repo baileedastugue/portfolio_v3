@@ -18,6 +18,14 @@ export default {
 			animation: {
 				reveal: 'reveal 1.5s ease-out',
 			},
+			aspectRatio: {
+				'53/60': '53/60',
+				'62/75': '62/75',
+				'95/100': '95/100',
+				'89/100': '89/100',
+				'93/100': '93/100',
+				'47/50': '47/50',
+			},
 			backgroundImage: ({ theme }) => ({
 				radial: `radial-gradient(circle, ${theme('colors.orange')} 0%, ${theme('colors.yellow')} 50%);`,
 			}),

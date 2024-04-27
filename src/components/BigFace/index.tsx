@@ -2,9 +2,20 @@ import { useState, useEffect, useRef } from 'react';
 import Faces from '../../assets/Faces';
 import Pause from '../../assets/svgs/Pause';
 import Play from '../../assets/svgs/Play';
+import FacePaths from '../../assets/svgs/FacePaths';
+
+const aspectRatios = [
+	'aspect-53/60',
+	'aspect-62/75',
+	'aspect-95/100',
+	'aspect-89/100',
+	'aspect-93/100',
+	'aspect-89/100',
+	'aspect-47/50',
+];
 
 const BigFace = () => {
-	const [currFaceIndex, setCurrFaceIndex] = useState(0);
+	const [currFaceIndex, setCurrFaceIndex] = useState(5);
 	const [isPlaying, setIsPlaying] = useState(true);
 
 	const intervalId = useRef(0);
@@ -24,20 +35,30 @@ const BigFace = () => {
 		return () => clearInterval(intervalId.current);
 	}, [isPlaying]);
 
+	const toggleAnimation = () => {
+		setIsPlaying(curr => !curr);
+	};
+
 	return (
-		<div className='absolute -bottom-28 -right-20 min-w-full-plus-5rem sm:-bottom-20 md:-bottom-32 '>
+		<div className='absolute -bottom-10 w-full md:-bottom-14 md:right-0 md:z-20 md:w-7/12'>
+			<svg className='h-0 w-0 '>
+				<clipPath id='drop-clip-path' clipPathUnits='objectBoundingBox'>
+					<path d={FacePaths[currFaceIndex]} />
+				</clipPath>
+			</svg>
 			<button
-				onClick={() => {
-					setIsPlaying(curr => !curr);
-				}}
-				className='absolute left-4 top-32 z-30 w-8 text-white'
+				onClick={toggleAnimation}
+				className='absolute bottom-14 right-4 z-30 w-8 text-white md:bottom-20'
 			>
 				{isPlaying ? <Pause /> : <Play />}
 			</button>
-			<img
-				className='md:bg-clip-circle md:circle-clip md:-right-10 md:w-2/3 md:min-w-0 '
-				alt='Bailee Dastugue; woman with brown hair smiling behind a computer.'
-				src={Faces[currFaceIndex]}
+			<div
+				onClick={toggleAnimation}
+				className={`z-30 w-full bg-contain bg-center bg-no-repeat hover:bg-light ${aspectRatios[currFaceIndex]}`}
+				style={{
+					backgroundImage: `url('${Faces[currFaceIndex]}'`,
+					clipPath: 'url(#drop-clip-path)',
+				}}
 			/>
 		</div>
 	);
