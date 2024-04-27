@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.nav-circle-clip {
+		clip-path: circle(15rem at 22% 33%);
+	}
+
+	.nav-circle-clip-hidden {
+		clip-path: circle(0 at 9% 7%);
+	}
+
+	.circle-clip {
+		clip-path: circle();
+	}
+}
