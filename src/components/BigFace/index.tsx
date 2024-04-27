@@ -40,7 +40,7 @@ const BigFace = () => {
 	};
 
 	return (
-		<div className='absolute -bottom-10 w-full md:-bottom-14 md:right-0 md:w-7/12'>
+		<div className='absolute -bottom-10 w-full md:-bottom-14 md:right-0 md:w-7/12 lg:right-32 lg:w-1/2'>
 			<svg className='h-0 w-0 '>
 				<clipPath id='drop-clip-path' clipPathUnits='objectBoundingBox'>
 					<path d={FacePaths[currFaceIndex]} />
@@ -48,13 +48,13 @@ const BigFace = () => {
 			</svg>
 			<button
 				onClick={toggleAnimation}
-				className='absolute bottom-14 right-4 z-30 w-8 text-white md:bottom-20'
+				className='absolute bottom-14 right-4 w-8 text-white md:bottom-20'
 			>
 				{isPlaying ? <Pause /> : <Play />}
 			</button>
 			<div
 				onClick={toggleAnimation}
-				className={`z-30 w-full bg-contain bg-center bg-no-repeat hover:cursor-pointer hover:bg-purple-light md:rounded-full ${aspectRatios[currFaceIndex]}`}
+				className={`w-full bg-contain bg-center bg-no-repeat hover:cursor-pointer hover:bg-purple-light md:rounded-full ${aspectRatios[currFaceIndex]}`}
 				style={{
 					backgroundImage: `url('${Faces[currFaceIndex]}'`,
 					clipPath: 'url(#drop-clip-path)',
