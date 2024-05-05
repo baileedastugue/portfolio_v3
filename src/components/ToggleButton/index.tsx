@@ -12,21 +12,24 @@ const ToggleButton = ({
 	activeSelection = values[0],
 }: ToggleButtonProps) => {
 	return (
-		<>
-			{values.map((value, index) => {
+		<div>
+			{values.map(value => {
+				const isSelected = activeSelection === value;
 				return (
 					<button
-						aria-selected={activeSelection === value}
+						aria-selected={isSelected}
 						name={value}
 						key={value}
 						onClick={e => handleClick(e)}
-						className={`border-y-2 border-orange p-2 font-serif text-base font-bold transition last:rounded-r-full last:border-x-2 hover:cursor-pointer hover:bg-yellow aria-selected:bg-orange ${index === 0 && 'rounded-l-full border-x-2'}`}
+						className={
+							'border-y-2 border-orange p-2 font-serif text-base font-bold text-dark transition first:rounded-l-full first:border-x-2 last:rounded-r-full last:border-x-2 hover:cursor-pointer hover:bg-yellow aria-selected:bg-orange'
+						}
 					>
 						{value}
 					</button>
 				);
 			})}
-		</>
+		</div>
 	);
 };
 
