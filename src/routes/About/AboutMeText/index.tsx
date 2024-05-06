@@ -51,9 +51,21 @@ const AboutMeText = () => {
 				).
 			</p>
 			<div className='flex flex-wrap'>
-				<img src={j} className='w-1/2 p-1 lg:w-1/4' />
-				<img src={bella} className='w-1/2 p-1 lg:w-1/4' />
-				<img src={starTrek} className='w-full p-1 lg:w-1/2' />
+				<img
+					src={j}
+					className='w-1/2 p-1 lg:w-1/4'
+					alt='Man with brown hair, brown eyes, and glasses sitting in a restaurant and smiling'
+				/>
+				<img
+					src={bella}
+					className='w-1/2 p-1 lg:w-1/4'
+					alt='Brown tabby cat sitting on a kitchen counter with frosting on her nose'
+				/>
+				<img
+					src={starTrek}
+					className='w-full p-1 lg:w-1/2'
+					alt='Picard telling Worf "Sing Worf Sing" from Star Trek: Insurrection'
+				/>
 			</div>
 		</div>
 	);
