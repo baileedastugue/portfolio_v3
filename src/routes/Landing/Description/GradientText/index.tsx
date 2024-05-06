@@ -2,11 +2,14 @@ import { ReactNode } from 'react';
 
 interface GradientTextProps {
 	children: ReactNode;
+	classNames?: string;
 }
 
-const GradientText = ({ children }: GradientTextProps) => {
+const GradientText = ({ children, classNames }: GradientTextProps) => {
 	return (
-		<span className='bg-radial bg-clip-text text-transparent'>{children}</span>
+		<span className={`${classNames} bg-radial bg-clip-text text-transparent`}>
+			{children}
+		</span>
 	);
 };
 

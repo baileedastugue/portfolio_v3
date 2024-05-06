@@ -1,8 +1,8 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, ReactElement } from 'react';
 import ToggleButton from '../ToggleButton';
 
 interface Map {
-	[key: string]: string | undefined;
+	[key: string]: string | undefined | ReactElement;
 }
 
 interface TabbedContentProps {
@@ -25,7 +25,7 @@ const TabbedContent = ({
 					activeSelection={selectedTab}
 				/>
 			</div>
-			<p className='font-serif text-dark'>{tabs[selectedTab]}</p>
+			<div className='font-serif text-dark'>{tabs[selectedTab]}</div>
 		</>
 	);
 };
