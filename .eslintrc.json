@@ -6,7 +6,8 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:react/recommended"
+		"plugin:react/recommended",
+		"prettier"
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
@@ -15,12 +16,12 @@
 	},
 	"plugins": ["@typescript-eslint", "react", "prettier"],
 	"rules": {
+		"prettier/prettier": ["error", { "singleQuote": true }],
 		"indent": ["error", "tab"],
 		"linebreak-style": ["error", "unix"],
 		"quotes": ["error", "single"],
 		"semi": ["error", "always"],
-		"react/react-in-jsx-scope": "off",
-		"prettier/prettier": ["error", { "singleQuote": true }]
+		"react/react-in-jsx-scope": "off"
 	},
 	"settings": {
 		"react": {
