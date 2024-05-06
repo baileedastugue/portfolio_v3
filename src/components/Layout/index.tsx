@@ -13,7 +13,9 @@ const Layout = ({ children }: LayoutProps) => {
 		<div className='relative h-full overflow-clip bg-light dark:bg-purple'>
 			<DisplayText bottomLeftText='Bailee' topRightText='Dastugue' />
 			{location.pathname === '/' && <BigFace />}
-			<div className='h-full px-6 pt-16 md:px-28 md:pt-12'>{children}</div>
+			<div className='relative h-full overflow-auto px-6 pb-6 pt-16 md:z-30 md:pl-32 md:pr-36 md:pt-12 lg:px-28'>
+				{children}
+			</div>
 		</div>
 	);
 };
