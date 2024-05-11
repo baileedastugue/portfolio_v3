@@ -5,6 +5,7 @@ interface NavLinkProps {
 	closeMenu: () => void;
 	isActive: boolean;
 	to: string;
+	externalLink: boolean;
 }
 
 const NavLink = ({ closeMenu, isActive, ...props }: NavLinkProps) => {

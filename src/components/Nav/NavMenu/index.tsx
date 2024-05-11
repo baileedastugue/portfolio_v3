@@ -12,19 +12,23 @@ export const navItems = [
 	{
 		to: '/',
 		title: 'Home',
+		externalLink: false,
 	},
 	{
 		to: '/about',
 		title: 'About me',
+		externalLink: false,
 	},
 	{
 		to: '/work',
 		title: 'My work',
+		externalLink: false,
 	},
 	{
-		to: '/connect',
+		to: 'https://www.linkedin.com/in/bailee-dastugue/',
 		// eslint-disable-next-line quotes
 		title: "Let's connect",
+		externalLink: true,
 	},
 ];
 
@@ -41,7 +45,12 @@ const NavMenu = ({ children, isOpen, closeMenu }: NavMenuProps) => {
 						const match = useMatch({ path: resolved.pathname, end: true });
 						return (
 							<li key={item.title}>
-								<NavLink closeMenu={closeMenu} isActive={!!match} to={item.to}>
+								<NavLink
+									closeMenu={closeMenu}
+									isActive={!!match}
+									to={item.to}
+									externalLink={item.externalLink}
+								>
 									{item.title}
 								</NavLink>
 							</li>

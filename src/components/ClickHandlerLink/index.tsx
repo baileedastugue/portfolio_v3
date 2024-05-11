@@ -11,13 +11,17 @@ interface LinkProps extends InputHTMLAttributes<HTMLAnchorElement> {
 	state?: string;
 	target?: React.HTMLAttributeAnchorTarget;
 	to: To;
+	externalLink?: boolean;
 	rest?: object;
 }
 export type Ref = HTMLAnchorElement;
 
 // code from https://reactrouter.com/en/main/hooks/use-link-click-handler
 const ClickHandlerLink = forwardRef<Ref, LinkProps>(
-	({ onClick, replace = false, state, target, to, ...rest }, ref) => {
+	(
+		{ onClick, replace = false, state, target, to, externalLink, ...rest },
+		ref
+	) => {
 		const href = useHref(to);
 		const handleClick = useLinkClickHandler(to, {
 			replace,
@@ -28,15 +32,16 @@ const ClickHandlerLink = forwardRef<Ref, LinkProps>(
 		return (
 			<a
 				{...rest}
-				href={href}
+				href={externalLink ? (to as string) : href}
 				onClick={event => {
 					onClick?.(event);
-					if (!event.defaultPrevented) {
+					if (!externalLink && !event.defaultPrevented) {
 						handleClick(event);
 					}
 				}}
 				ref={ref}
-				target={target}
+				rel={externalLink ? 'noreferrer' : ''}
+				target={externalLink ? '_blank' : target}
 			/>
 		);
 	}

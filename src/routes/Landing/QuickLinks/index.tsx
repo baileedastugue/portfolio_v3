@@ -14,6 +14,7 @@ const QuickLinks = () => {
 							<ClickHandlerLink
 								key={item.title}
 								to={item.to}
+								externalLink={item.externalLink}
 								className='relative z-10 bg-white/80 px-1 text-2xl leading-snug text-purple-dark backdrop-blur-sm hover:bg-purple-light sm:text-3xl sm:leading-normal lg:bg-transparent lg:text-light'
 							>
 								{item.title}
