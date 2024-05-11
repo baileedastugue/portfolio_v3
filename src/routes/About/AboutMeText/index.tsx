@@ -12,7 +12,7 @@ const AboutMeText = () => {
 			// eslint-disable-next-line quotes
 			term: "I'm at my happiest",
 			// eslint-disable-next-line quotes
-			body: "when I'm learning new technology, mentoring other engineers, or finally getting the live code to match pixel-for-pixel with the mocks.",
+			body: "when I'm learning new technology, mentoring other engineers, or matching live code pixel-for-pixel with the mocks.",
 		},
 		{
 			term: 'My love language',
