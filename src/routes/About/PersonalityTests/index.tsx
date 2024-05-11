@@ -8,7 +8,7 @@ const PersonalityTests = () => {
 		{
 			header: 'Myers-Briggs Type Indicator',
 			body: (
-				<GradientText classNames='flex justify-around font-sans text-8xl mx-10 md:justify-center gap-8'>
+				<GradientText classNames='flex justify-around font-sans text-8xl mx-10 md:justify-center gap-8 xl:mx-48'>
 					<div>I</div>
 					<div>N</div>
 					<div>T</div>
