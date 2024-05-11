@@ -24,7 +24,7 @@ interface InnerTextProps {
 const InnerText = ({ text, textPosition }: InnerTextProps) => {
 	const classes = {
 		container:
-			'tracking-widest absolute transform font-focus text-9xl font-black leading-tight',
+			'tracking-widest absolute transform font-focus text-[7rem] font-black leading-tight',
 		bottomLeft:
 			'bottom-0 left-4 origin-bottom-left -translate-y-4 translate-x-32 -rotate-90',
 		topRight:
