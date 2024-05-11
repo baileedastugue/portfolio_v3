@@ -40,7 +40,7 @@ const BigFace = () => {
 	};
 
 	return (
-		<div className='absolute -bottom-10 w-full md:-bottom-14 md:right-0 md:z-30 md:w-7/12 lg:right-32 lg:w-1/2'>
+		<div className='absolute -bottom-10 z-10 w-full md:-bottom-14 md:right-0 md:z-30 md:w-7/12 lg:right-32 lg:w-2/5 xl:right-32'>
 			<svg className='h-0 w-0 '>
 				<clipPath id='drop-clip-path' clipPathUnits='objectBoundingBox'>
 					<path d={FacePaths[currFaceIndex]} />
